@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<div class="row justify-content-center">
+    <h1>Sign in</h1>
+</div>
+<p>
+<div class="row justify-content-center">
+    <div class="col-lg-4">
+        Username<br>
+        <input type="text" class="form-control" [(ngModel)]="user.login" placeholder="Login" />
+    </div>
+</div>
+<p>
+<div class="row justify-content-center">
+    <div class="col-lg-4">
+        Password<br>
+        <input type="password" class="form-control" [(ngModel)]="user.password" placeholder="Password" />
+    </div>
+</div>
+<p>
+<p>
+<div class="text-center">
+    <button class="btn btn-success" (click)="signInButtonClick()">Sign in</button>
+</div>
+<p>
+<div class="text-center">
+    <a routerLink="../register">Don't have an account? Sign up</a>
+</div>
+<p>
+<div class="row justify-content-center" *ngIf="showLoginAlert">
+    <div class="alert alert-danger col-md-3 text-center">
+        <strong>Incorrect login or password</strong>
+    </div>
+</div>

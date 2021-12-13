@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<h1>Database</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Country</th>
+            <th>Code</th>
+            <th>Capital</th>
+            <th>Region</th>
+            <th>Population</th>
+            <th>Area</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let country of countriesList">
+            <td>{{ country.name }}</td>
+            <td>{{ country.cca2 }}</td>
+            <td>{{ country.capital }}</td>
+            <td>{{ country.region }}</td>
+            <td>{{ country.population }}</td>
+            <td>{{ country.area }}</td>
+            <td>
+                <button class="btn btn-danger" (click)="deleteButtonClick(country.cca2)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

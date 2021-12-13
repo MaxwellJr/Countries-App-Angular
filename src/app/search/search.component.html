@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<h1>Search</h1>
+<p>
+<div class="row">
+    <div class="col-lg-5">
+        <input type="text" class="form-control" id="SearchBox" [(ngModel)]="inputCountry"
+            placeholder="Type country here" />
+    </div>
+    <div class="col">
+        <button class="btn btn-primary" (click)="searchButtonClick()">Search</button>
+    </div>
+</div>
+<p>
+<div class="row">
+    <div class="col-lg-6">
+        Country<br>
+        <input class="form-control" id="FullNameBox" [(ngModel)]="country.name"
+            placeholder="Country full name will display here" readonly />
+    </div>
+</div>
+<p>
+<div class="row">
+    <div class="col-lg-5">
+        Capital<br>
+        <input class="form-control" id="CapitalBox" [(ngModel)]="country.capital"
+            placeholder="Capital city will display here" readonly />
+    </div>
+    <div class="col-lg-1">
+        Code<br>
+        <input class="form-control" id="CodeBox" [(ngModel)]="country.cca2" placeholder="XX" readonly />
+    </div>
+</div>
+<p>
+<div class="row">
+    <div class="col-lg-3">
+        Region<br>
+        <input class="form-control" id="RegionBox" [(ngModel)]="country.region" placeholder="Region will display here"
+            readonly />
+    </div>
+    <div class="col-lg-3">
+        Area<br />
+        <div *ngIf="country.area !== 0; else zeroArea">
+            <input class="form-control" id="AreaBox" *ngIf="country.area !== 0" [(ngModel)]="country.area"
+            placeholder="Area value" readonly />
+        </div>
+        <ng-template #zeroArea>
+            <input class="form-control" placeholder="Area value" readonly />
+        </ng-template>
+    </div>
+</div>
+<p>
+<div class="row">
+    <div class="col-lg-6">
+        Population<br />
+        <div *ngIf="country.population !== 0; else zeroPopulation">
+            <input class="form-control" id="PopulationBox" [(ngModel)]="country.population"
+                placeholder="Population value" readonly />
+        </div>
+        <ng-template #zeroPopulation>
+            <input class="form-control" placeholder="Population value" readonly />
+        </ng-template>
+    </div>
+</div>
+<p>
+<p>
+    <button class="btn btn-success" style="margin-right:20px" (click)="addButtonClick()">Add to database</button>
+    <button class="btn btn-primary" (click)="clearButtonClick()">Clear fields</button>
+<p>
+    <div *ngIf="isAdded" class="alert alert-success col-md-auto">
+        <strong>The most recent data about {{ country.name }} was successfully added to the database</strong>
+    </div>

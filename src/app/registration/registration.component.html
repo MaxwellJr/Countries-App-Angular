@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<div class="row justify-content-center">
+    <h1>Sign up</h1>
+</div>
+<p>
+<div class="row justify-content-center">
+    <div class="col-lg-4">
+        Username<br>
+        <input type="text" class="form-control" [(ngModel)]="user.login" placeholder="Login" />
+    </div>
+</div>
+<p>
+<div class="row justify-content-center">
+    <div class="col-lg-4">
+        Password<br>
+        <input type="password" class="form-control" [(ngModel)]="user.password" placeholder="Password" />
+    </div>
+</div>
+<p>
+<p>
+    <div class="text-center">
+    <button class="btn btn-primary justify-content-center" (click)="signUpButtonClick()" >Sign up</button>
+</div>
+<p>
+<div class="text-center">
+    <a routerLink="../login">Already have an account? Log in</a>
+</div>

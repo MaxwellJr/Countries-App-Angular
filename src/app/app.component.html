@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<div class="container">
+    <nav class="navbar navbar-expand-sm bg-light navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <button routerLink="search" class="m-1 btn btn-light btn-outline-primary" Button>Search</button>
+            </li>
+            <li class="nav-item">
+                <button routerLink="database" class="m-1 btn btn-light btn-outline-primary" Button>Database</button>
+            </li>
+            <li *ngIf="isLoggedIn()" class="nav-item">
+                <button routerLink="login" class="m-1 btn btn-light btn-outline-primary" Button
+                    (click)="logoutButtonClick()">Log out</button>
+            </li>
+        </ul>
+    </nav>
+    <router-outlet></router-outlet>
+</div>
