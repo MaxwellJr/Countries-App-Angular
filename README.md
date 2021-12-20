@@ -1,5 +1,10 @@
 # Countries App UI
-Rest Countries Angular application
+Rest Countries Angular application provides features listed below:
+- Registration / Login form
+- Search country by name using [REST Countries API](https://restcountries.com/)
+- Add country to the database
+- Fetch data from the database
+- Remove country from the database
 
 ## Views
 
